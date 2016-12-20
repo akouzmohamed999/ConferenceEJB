@@ -1,0 +1,63 @@
+<?page title="Projet conference" contentType="text/html;charset=UTF-8"?>
+<?script type="text/javascript" src="/resources/js/bootstrap.min.js"?>
+<?style href="/resources/css/bootstrap.min.css" type="text/css" ?>
+
+<zk xmlns:h="native">
+	<window border="normal" height="600px"
+		apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vuepresi') @init('conference.presentation.ListerPresidentServlet')">
+		<div>
+			<h:center>
+				<h:img src="img/logo.png" />
+			</h:center>
+			<h:div class="container">
+				<h:h2></h:h2>
+				<h:div class="btn-group btn-group-justified">
+					<h:a href="auteurs.zul" class="btn btn-primary">
+						Auteurs
+					</h:a>
+					<h:a href="programmes.zul"
+						class="btn btn-primary">
+						Programmes
+					</h:a>
+					<h:a href="presidents.zul"
+						class="btn btn-primary">
+						Présidents
+					</h:a>
+					<h:a href="ajouter_sessions.zul"
+						class="btn btn-primary">
+						Ajouter une Session
+					</h:a>
+				</h:div>
+			</h:div>
+			<h:hr />
+			<separator></separator>
+			<button label="Ajouter un président"
+				onClick="@command('afficher')" />
+			<separator />
+			<separator />
+			<separator />
+			<grid model="@bind(vuepresi.presidents)">
+				<auxhead>
+					<auxheader colspan="4" label="Liste des présidents" />
+				</auxhead>
+				<columns>
+					<column hflex="5">Nom</column>
+					<column hflex="6">Prenom</column>
+					<column hflex="3">Email</column>
+					<column hflex="4">Département</column>
+				</columns>
+				<rows sclass="narrow">
+					<template name="model">
+						<row>
+							<label value="@bind(each.nom)" />
+							<label value="@bind(each.prenom)" />
+							<label value="@bind(each.email)" />
+							<label value="@bind(each.departement)" />
+						</row>
+					</template>
+				</rows>
+			</grid>
+		</div>
+	</window>
+</zk>

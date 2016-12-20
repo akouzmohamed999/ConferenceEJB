@@ -1,0 +1,128 @@
+<?page title="Projet conference" contentType="text/html;charset=UTF-8"?>
+<?script type="text/javascript" src="/resources/js/bootstrap.min.js"?>
+<?style href="/resources/css/bootstrap.min.css" type="text/css" ?>
+
+<zk xmlns:h="native">
+	<window border="normal" height="900px"
+		apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('as') @init('conference.presentation.AjouterSessionServlet')">
+		<h:center>
+			<h:img src="img/logo.png" />
+		</h:center>
+		<h:div class="container">
+			<h:h2></h:h2>
+			<h:div class="btn-group btn-group-justified">
+				<h:a href="auteurs.zul" class="btn btn-primary">
+					Auteurs
+				</h:a>
+				<h:a href="programmes.zul" class="btn btn-primary">
+					Programmes
+				</h:a>
+				<h:a href="presidents.zul" class="btn btn-primary">
+					Présidents
+				</h:a>
+				<h:a href="ajouter_sessions.zul"
+					class="btn btn-primary">
+					Ajouter une Session
+				</h:a>
+			</h:div>
+		</h:div>
+		<h:hr />
+		<separator></separator>
+		<grid style="font-size:1.4em;">
+			<rows>
+				<row>
+					Programme:
+					<div>
+						<listbox mold="select"
+							onSelect="@command('miseajourdate')"
+							selectedItem="@bind(as.prog) " model="@bind(as.programmes)">
+							<template name="model">
+								<listitem
+									label="@bind(each.intitule)">
+								</listitem>
+							</template>
+						</listbox>
+					</div>
+				</row>
+				<row>
+					Président:
+					<div>
+						<listbox mold="select"
+							selectedItem="@bind(as.pres) " model="@bind(as.presidents)">
+							<template name="model">
+								<listitem label="@bind(each)">
+								</listitem>
+							</template>
+						</listbox>
+					</div>
+				</row>
+				<row>
+					Date:
+					<div>
+						<listbox mold="select"
+							selectedItem="@bind(as.jour) " model="@bind(as.prog.dates())">
+							<template name="model">
+								<listitem label="@bind(each)">
+								</listitem>
+							</template>
+						</listbox>
+					</div>
+				</row>
+				<row>
+					Heure de début:
+					<div>
+						<timebox cols="12" format="short"
+							value="@bind(as.temps_debut)" />
+					</div>
+				</row>
+				<row>
+					Heure de fin:
+					<div>
+						<timebox cols="12" format="short"
+							value="@bind(as.temps_fin)" />
+					</div>
+				</row>
+				<row>
+					Nombre d'articles:
+					<div>
+						<spinner id="pop"
+							onChanging="@command('miseajoursaisiearticles')"
+							onChange="@command('miseajoursaisiearticles')"
+							value="@bind(as.nbr_articles)" constraint="no empty,min 1,max 4" />
+					</div>
+				</row>
+
+			</rows>
+		</grid>
+		<h:h3>Article(s)</h:h3>
+		<separator></separator>
+		<vlayout style="font-size:1.3em;">
+			<hbox>
+				<h:span
+					style="font-size:1.7em;margin-right:450px;margin-left:30px;">
+					Titre
+				</h:span>
+				<h:span style="font-size:1.7em;">Auteurs</h:span>
+			</hbox>
+
+			<forEach items="@bind(as.articles)">
+				<hbox>
+					<textbox style="font-size:0.8em;height:33px"
+						value="@bind(each.titre)" constraint="no empty" width="340px" />
+
+					<chosenbox sclass="mailinput"
+						onCreate="@command('nouvelauteur', v=self,i=forEachStatus.index)"
+						model="@load(as.auteurs)" emptyMessage="Liste des auteurs"
+						width="550px" style="font-size:1.3em" />
+				</hbox>
+			</forEach>
+
+		</vlayout>
+
+		<h:hr />
+
+		<button label="Ajouter" onClick="@command('ajouter')" />
+
+	</window>
+</zk>

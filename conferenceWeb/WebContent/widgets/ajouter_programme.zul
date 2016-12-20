@@ -1,0 +1,29 @@
+<window id="ajouterprogident" title="Ajouter président" border="normal"
+	width="460px" position="center,center" closable="true"
+	action="show: slideDown;hide: slideUp"
+	apply="org.zkoss.bind.BindComposer"
+	viewModel="@id('ajouterprog') @init('conference.presentation.AjouterProgrammeServlet')"
+	visible="@load(ajouterprog.visible)">
+	<vlayout>
+		<grid>
+			<rows>
+				<row>
+					Intitulé:
+					<textbox value="@bind(ajouterprog.prog.intitule)"
+						constraint="no empty" />
+				</row>
+				<row>
+					Date de début:
+					<datebox id="datedebut" value="@bind(ajouterprog.prog.dateDeb)"
+						format="yyyy/MM/dd" constraint="no empty" />
+				</row>
+				<row>
+					Date de fin:
+					<datebox id="datefin" value="@bind(ajouterprog.prog.dateFin)"
+						format="yyyy/MM/dd" constraint="no empty" />
+				</row>
+			</rows>
+		</grid>
+		<button label="Ajouter" onClick="@command('ajouter')" />
+	</vlayout>
+</window>

@@ -1,0 +1,77 @@
+<?page title="Projet conference" contentType="text/html;charset=UTF-8"?>
+<?script type="text/javascript" src="/resources/js/bootstrap.min.js"?>
+<?style href="/resources/css/bootstrap.min.css" type="text/css" ?>
+
+<zk xmlns:h="native">
+	<window border="normal" height="600px"
+		apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vueprog') @init('conference.presentation.ListerProgrammeServlet')">
+		<div>
+			<h:center>
+				<h:img src="img/logo.png" />
+			</h:center>
+			<h:div class="container">
+				<h:h2></h:h2>
+				<h:div class="btn-group btn-group-justified">
+					<h:a href="auteurs.zul" class="btn btn-primary">
+						Auteurs
+					</h:a>
+					<h:a href="programmes.zul"
+						class="btn btn-primary">
+						Programmes
+					</h:a>
+					<h:a href="presidents.zul"
+						class="btn btn-primary">
+						Présidents
+					</h:a>
+					<h:a href="ajouter_sessions.zul"
+						class="btn btn-primary">
+						Ajouter une Session
+					</h:a>
+				</h:div>
+			</h:div>
+			<h:hr />
+			<separator></separator>
+			<button label="Ajouter un programme"
+				onClick="@command('afficher')" />
+			<separator />
+			<separator />
+			<separator />
+			<grid model="@bind(vueprog.programmes)">
+				<auxhead>
+					<auxheader colspan="4" label="Liste des programmes" />
+				</auxhead>
+				<columns>
+					<column hflex="5">Intitulé</column>
+					<column hflex="6">Date de début</column>
+					<column hflex="3">Date de fin</column>
+					<column hflex="3">Nombre de jours</column>
+					<column hflex="3">Detail</column>
+				</columns>
+				<rows sclass="narrow">
+					<template name="model">
+						<row>
+							<label value="@bind(each.intitule)" />
+							<label
+								value="@bind(each.dateDeb.toString())" />
+							<label
+								value="@bind(each.dateFin.toString())" />
+							<label
+								style="font-size:1em;font-weight:bold"
+								value="@bind(vueprog.nombrejour(each.dateFin,each.dateDeb))" />
+							<div>
+								<a
+									href="detail_programme.zul?id=${each.idProg}">
+									<span>
+										<button image="/img/loupe.png" />
+									</span>
+								</a>
+
+							</div>
+						</row>
+					</template>
+				</rows>
+			</grid>
+		</div>
+	</window>
+</zk>

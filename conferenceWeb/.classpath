@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="target/classes" path="src">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.jboss.ide.eclipse.as.core.server.runtime.runtimeTarget/WildFly 10.0 Runtime">
+		<attributes>
+			<attribute name="owner.project.facets" value="jst.web"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="/conferenceJPA"/>
+	<classpathentry kind="src" path="/conferenceEJB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/bsh.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/commons-codec.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/commons-collections.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/commons-fileupload.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/commons-io.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/Filters.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/flashchart.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/gmapsz.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/gson.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/itext.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/jackson-annotations.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/jackson-core.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/jackson-databind.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/jasperreports.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/javassist.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/jcommon.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/jfreechart.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/jxl.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/poi.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/sapphire.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/silvertail.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/slf4j-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/slf4j-jdk14.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/timelinez.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/timeplotz.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/zcommon.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/zel.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/zhtml.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/zk.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/zkbind.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/zkex.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/zkmax.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/zkplus.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/zml.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/zsoup.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/zul.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/zuljsp.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/zuti.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mohamed/Downloads/Compressed/wildfly-8.2.1.Final/lib/zweb.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>

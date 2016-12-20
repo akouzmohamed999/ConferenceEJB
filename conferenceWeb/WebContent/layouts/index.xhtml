@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta charset="utf-8" />
+	<title><ui:insert name="title">Medflex</ui:insert></title>
+	<ui:include src="html_header.xhtml" />
+	<ui:insert name="styles"></ui:insert>
+</h:head>
+<body>
+	<div class="container">
+		<ui:include src="menu.xhtml" />
+		<ui:insert name="header">Projet de conférences</ui:insert>
+		<ui:insert name="main"></ui:insert>
+		<ui:insert name="footer">Projet JEE</ui:insert>
+	</div>
+	<ui:include src="javascript_includes.xhtml" />
+	<ui:insert name="scripts"></ui:insert>
+</body>
+</html>

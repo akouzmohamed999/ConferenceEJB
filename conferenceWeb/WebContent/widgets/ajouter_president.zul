@@ -1,0 +1,40 @@
+<window id="ajouterpresident" title="Ajouter président" border="normal"
+	width="460px" position="center,center" closable="true"
+	action="show: slideDown;hide: slideUp"
+	apply="org.zkoss.bind.BindComposer"
+	viewModel="@id('ajouterpres') @init('conference.presentation.AjouterPresidentServlet')"
+	visible="@load(ajouterpres.visible)"
+	>
+	<vlayout>
+		<grid>
+			<rows>
+				<row>
+					Nom:
+					<textbox value="@bind(ajouterpres.presid.nom)"
+						constraint="no empty" />
+				</row>
+				<row>
+					Prénom:
+					<textbox value="@bind(ajouterpres.presid.prenom)"
+						constraint="no empty" />
+				</row>
+				<row>
+					Département:
+					<listbox mold="select" 
+						selectedItem="@bind(ajouterpres.presid.departement)"
+						model="@bind(ajouterpres.depts)">
+						<template name="model">
+							<listitem label="@bind(each.toString())"></listitem>
+						</template>
+					</listbox>
+				</row>
+				<row>
+					Email:
+					<textbox value="@bind(ajouterpres.presid.email)"
+						constraint="no empty,/.+@.+\.[a-z]+/:Un email !" />
+				</row>
+			</rows>
+		</grid>
+		<button label="Ajouter" onClick="@command('ajouter')"/>
+	</vlayout>
+</window>

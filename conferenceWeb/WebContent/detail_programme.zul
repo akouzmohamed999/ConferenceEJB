@@ -1,0 +1,84 @@
+<?page title="Projet conference" contentType="text/html;charset=UTF-8"?>
+<zk xmlns:h="native">
+	<style>
+		.listesession{ margin-left:50px; } .listearticles{
+		margin-left:50px; } .sep{ margin-top:30px; } .labelinfo{
+		font-size:1.1em; color: #625192; font-weight: bold; display:
+		inline;
+
+		}
+
+		.z-infoafficher{ color:#14073A; }
+
+	</style>
+	<window border="normal" height=""
+		apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('aff') @init('conference.presentation.AfficherDetailProgrammeServlet')">
+		<div class="sep">
+			<h:span class="labelinfo">Programme :</h:span>
+			<label style="font-size:1.2em;color:#14073A"
+				class="infoafficher" value="@load(aff.prog.intitule)" />
+			<separator></separator>
+			<h:span class="labelinfo">Date de début :</h:span>
+			<label style="font-size:1.2em;color:#14073A"
+				value="@load(aff.prog.dateDeb.toString())" />
+			<separator></separator>
+			<h:span class="labelinfo">Date de fin :</h:span>
+			<label style="font-size:1.2em;color:#14073A"
+				value="@load(aff.prog.dateFin.toString())" />
+			<separator></separator>
+			<h:h3>Liste des sessions :</h:h3>
+			<separator></separator>
+		</div>
+		<h:hr />
+		<forEach items="${aff.prog.sessions }">
+			<div class="listesession">
+				<h:span class="labelinfo">Date :</h:span>
+				<label style="font-size:1.2em;color:#14073A"
+					value="${each.jour.toString()}" />
+				<separator></separator>
+				<h:span class="labelinfo">Heure de début :</h:span>
+				<label style="font-size:1.2em;color:#14073A"
+					value="${String.format('%02d:%02d', each.heureDeb.getHours(), each.heureDeb.getMinutes()) }" />
+				<separator></separator>
+				<h:span class="labelinfo">Heure de fin :</h:span>
+				<label style="font-size:1.2em;color:#14073A"
+					value="${String.format('%02d:%02d', each.heureFin.getHours(), each.heureFin.getMinutes()) }" />
+				<separator></separator>
+				<h:h3>Articles</h:h3>
+
+				<div class="listearticles">
+					<h:span style="margin-left:-14px;font-size:0.9em;"
+						class="labelinfo">
+						Durée de chaque article :
+					</h:span>
+					<label style="font-size:1.2em;color:#14073A"
+						value="${aff.duree(each.articles.size(),each)}" />
+					<span style="font-size:1.2em;">Minutes</span>
+					<separator></separator>
+					<forEach items="${each.articles}">
+						<h:span class="labelinfo">Titre :</h:span>
+						<label style="font-size:1.2em;color:#14073A"
+							value="${each.titre}">
+						</label>
+						<h:span class="labelinfo">Auteurs :</h:span>
+						<forEach items="${each.auteurs}">
+							<h:span class="labelinfo">
+								<label
+									style="font-size:1.2em;color:#14073A"
+									value="${each.nom} ${each.prenom}" />
+								<zk if="${ ! forEachStatus.isLast()}">
+									,
+								</zk>
+							</h:span>
+
+						</forEach>
+						<separator></separator>
+					</forEach>
+				</div>
+			</div>
+			<h:hr />
+		</forEach>
+
+	</window>
+</zk>

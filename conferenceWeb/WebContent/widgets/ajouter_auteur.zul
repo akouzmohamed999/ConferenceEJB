@@ -1,0 +1,29 @@
+<window id="ajouterautident" title="Ajouter Auteur" border="normal"
+	width="460px" position="center,center" closable="true"
+	action="show: slideDown;hide: slideUp"
+	apply="org.zkoss.bind.BindComposer"
+	viewModel="@id('ajouteraut') @init('conference.presentation.AjouterAuteurServlet')"
+	visible="@load(ajouteraut.visible)">
+	<vlayout>
+		<grid>
+			<rows>
+				<row>
+					Nom:
+					<textbox value="@bind(ajouteraut.aut.nom)"
+						constraint="no empty" />
+				</row>
+				<row>
+					Prénom:
+					<textbox value="@bind(ajouteraut.aut.prenom)"
+						constraint="no empty" />
+				</row>
+				<row>
+					Email:
+					<textbox value="@bind(ajouteraut.aut.email)"
+						constraint="no empty,/.+@.+\.[a-z]+/:Un email !" />
+				</row>
+			</rows>
+		</grid>
+		<button label="Ajouter" onClick="@command('ajouter')" />
+	</vlayout>
+</window>
